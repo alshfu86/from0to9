@@ -32,14 +32,13 @@ public class MainActivity extends Activity implements GestureOverlayView.OnGestu
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     Intent intent = getIntent();
-
     String typeOfGame = intent.getStringExtra("typeOfGame");
     ContentMainBinding binding = DataBindingUtil.setContentView(this, R.layout.content_main);
     binding.setModel(new ViewModel(this));
 
 
     mGestureLib = GestureLibraries.fromRawResource(this, R.raw.gestures);
-    if (!mGestureLib.load()) {}
+    if (!mGestureLib.load()) {Log.d("TRT","TRT");}
     GestureOverlayView gestures = (GestureOverlayView) findViewById(R.id.gestures);
     gestures.addOnGesturePerformedListener(this);
     this.task = Task.getInstance();
