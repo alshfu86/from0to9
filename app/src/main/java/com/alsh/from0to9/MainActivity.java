@@ -32,6 +32,7 @@ public class MainActivity extends Activity implements GestureOverlayView.OnGestu
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     Intent intent = getIntent();
+
     String typeOfGame = intent.getStringExtra("typeOfGame");
     ContentMainBinding binding = DataBindingUtil.setContentView(this, R.layout.content_main);
     binding.setModel(new ViewModel(this));
