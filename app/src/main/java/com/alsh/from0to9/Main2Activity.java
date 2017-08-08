@@ -37,10 +37,9 @@ public class Main2Activity extends AppCompatActivity {
     startActivity(intent);
   }
 
-  public void setting(View v)
+  public void exit(View v)
   {
-    Intent intent = new Intent(getApplicationContext(), Main4Activity.class);
-    startActivity(intent);
+    onStop();
   }
 
   public void support(View v)
@@ -61,6 +60,9 @@ public class Main2Activity extends AppCompatActivity {
     intent.putExtra("typeOfGame", "random");
     startActivity(intent);
   }
+
+
+
 
   @Override
   protected void onStop() {
